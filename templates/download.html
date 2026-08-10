@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Download</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% extends "base.html" %}
+
+{% block title %}
+Download
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<h2 id="countdown"></h2>
+
+<a id="downloadBtn"
+   href="{{ url_for('download', filename=filename) }}"
+   class="dbtn"
+   style="display:none;">
+   Download File ⬇️
+</a>
+
+<a href="{{ url_for('home') }}" class="home-btn">🏠 Home</a>
+</div>
+
+
+
+<script>
+let seconds = 5;
+const timer = setInterval(() => {
+document.getElementById("countdown").innerText =
+`Download starts in ${seconds}s`;
+seconds--;
+if(seconds < 0){
+clearInterval(timer);
+document.getElementById("countdown").innerText = "Ready to Download";
+document.getElementById("downloadBtn").style.display = "inline-block";
+}
+},1000);
+</script>
+
+{% endblock %}
+</body>
+</html>

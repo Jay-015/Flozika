@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="File converter.">
+<meta name="description" content="Document converter.">
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/logo.png') }}">
+
+<title>Floziko | File Converter</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+
+<!-- 
+<nav>
+    <div class="logo">
+          <a href="/">
+        <img src="{{ url_for('static', filename='/logo.png') }}">
+        <span>Flozika</span>
+    </a>
+        <!-- <a href="#">Floziko</a> -->
+    <!-- </div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#Features">Features</a></li>
+        <li><a href="#steps">How to use</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</nav> --> 
+
+{% extends "base.html" %}
+
+{% block title %}
+Floziko | File Converter
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<h1>File Converter <i class="fa-solid fa-arrows-rotate"></i></h1>
+ <p class="text-muted fs-5" style="color: rgb(100, 97, 97); margin-top: 5%; margin-bottom: 5%;">Easily convert documents, images, and PDFs</p>
+
+    <form action="/convert" method="POST" enctype="multipart/form-data">
+    <div class="drop-zone" id="dropZone">
+    <p>Drag & Drop File Here</p>
+    <input type="file" id="fileInput" name="file" hidden required>
+    <p id="error" style="color:red;"></p>
+    </div>
+
+<p id="fileName"></p>
+<p id="fileSize"></p>
+
+
+<select name="conversion" id="option">
+
+    <option value="pdf_to_word">PDF → Word</option>
+
+    <!-- <option value="word_to_pdf">Word → PDF</option> -->
+
+    <option value="jpg_to_png">JPG → PNG</option>
+
+    <option value="png_to_jpg">PNG → JPG</option>
+
+    <option value="jpg_to_pdf">JPG → PDF</option>
+
+    <option value="png_to_pdf">PNG → PDF</option>
+
+
+
+</select>
+
+<button type="submit"><b>Convert ➡️</b></button>
+</form>
+
+</div>
+
+<div class="hero" id="steps">
+<section class="how-to-use">
+
+    <h2>How to Use</h2>
+    <p class="section-desc">
+        Convert your files in just four easy steps.
+    </p>
+
+    <div class="steps">
+
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Upload File</h3>
+            <p>Select or drag & drop your file.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Select Format</h3>
+            <p>Choose your desired conversion type.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Convert</h3>
+            <p>Click the Convert button and wait a few seconds.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Download</h3>
+            <p>Download your converted file instantly.</p>
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+<div class="support-formate">
+
+    <section class="supported-formats" id="Features">
+
+    <h2>Supported Formats</h2>
+    <p class="section-desc">
+        We support the following file conversions.
+    </p>
+
+    <div class="format-grid">
+
+        <div class="format-card">
+            📄
+            <h3>PDF → Word</h3>
+        </div>
+
+        <div class="format-card">
+            📝
+            <h3>Word → PDF</h3>
+        </div>
+
+        <div class="format-card">
+            🖼
+            <h3>JPG → PNG</h3>
+        </div>
+
+        <div class="format-card">
+            🖼
+            <h3>PNG → JPG</h3>
+        </div>
+
+        <div class="format-card">
+            📄
+            <h3>JPG → PDF</h3>
+        </div>
+
+        <div class="format-card">
+            📄
+            <h3>PNG → PDF</h3>
+        </div>
+
+    </div>
+
+</section>
+</div>
+
+{% endblock %}
+
+
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
