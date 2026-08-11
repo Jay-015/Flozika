@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>File Requirements - Flozika</title>
+
+    <meta name="description"
+          content="Check Flozika's supported file types and maximum upload size requirements before converting your files.">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% extends "base.html" %}
+
+{% block title %}
+File Requirements - Flozika
+{% endblock %}
+
+{% block content %}
+
+<section class="requirements-page">
+
+    <div class="requirements-container">
+
+        <div class="requirements-header">
+            <span class="requirements-badge">FLOZIKA</span>
+
+            <h1>File Requirements</h1>
+
+            <p>
+                Before uploading your file, please make sure it meets
+                the supported file type and size requirements.
+            </p>
+        </div>
+
+
+        <div class="requirements-card">
+
+            <h2>Maximum File Size</h2>
+
+            <p class="section-description">
+                Flozika supports the following maximum file sizes:
+            </p>
+
+            <div class="file-limits">
+
+                <div class="file-limit">
+                    <div>
+                        <strong>JPG / JPEG</strong>
+                        <span>Image File</span>
+                    </div>
+                    <b>10 MB</b>
+                </div>
+
+                <div class="file-limit">
+                    <div>
+                        <strong>PNG</strong>
+                        <span>Image File</span>
+                    </div>
+                    <b>10 MB</b>
+                </div>
+
+                <div class="file-limit">
+                    <div>
+                        <strong>PDF</strong>
+                        <span>Document File</span>
+                    </div>
+                    <b>25 MB</b>
+                </div>
+
+                <div class="file-limit">
+                    <div>
+                        <strong>DOC / DOCX</strong>
+                        <span>Word Document</span>
+                    </div>
+                    <b>20 MB</b>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="requirements-card">
+
+            <h2>Important Notes</h2>
+
+            <ul class="notes-list">
+                <li>
+                    Please upload files within the specified size limit.
+                </li>
+
+                <li>
+                    Files exceeding the maximum allowed size cannot be processed.
+                </li>
+
+                <li>
+                    Supported file types may depend on the selected conversion.
+                </li>
+
+                <li>
+                    For better performance, use reasonably sized files.
+                </li>
+
+                <li>
+                    Uploaded files are processed temporarily for conversion.
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="requirements-card supported-card">
+
+            <h2>Supported File Types</h2>
+
+            <div class="supported-types">
+                <span>JPG</span>
+                <span>JPEG</span>
+                <span>PNG</span>
+                <span>PDF</span>
+                <span>DOC</span>
+                <span>DOCX</span>
+            </div>
+
+        </div>
+
+
+        <div class="requirements-footer">
+
+            <p>
+                Having trouble converting a file?
+            </p>
+
+            <a href="{{ url_for('home') }}" class="requirements-button">
+                Back to Flozika
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+</body>
+</html>

@@ -110,6 +110,10 @@ def download(filename):
 def privacy():
     return render_template("privacy-policy.html")
 
+@app.route("/file-requirements")
+def file_requirements():
+    return render_template("file-requirements.html")
+
 @app.errorhandler(413)
 def too_large(e):
     return "File too large. Maximum upload size is 25 MB.",413

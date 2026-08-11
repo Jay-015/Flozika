@@ -14,7 +14,7 @@ body{
     min-height:100vh;
     display:flex;
     flex-direction:column;
-
+    user-select: none;
     font-family:Arial, Helvetica, sans-serif;
     background:#0D1117;
     color:#C9D1D9;
@@ -70,7 +70,7 @@ nav{
     display:flex;
     list-style:none;
     gap:35px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .nav-links li a{
@@ -349,6 +349,8 @@ color:#ffffff;
     margin-top:auto;
 }
 
+
+
 .format-card{
    background:#161B22;
 border:1px solid #30363D;
@@ -396,7 +398,17 @@ color: white;
     color:#cbd5e1;
     font-size:15px;
     margin:8px 0;
-    line-height:1.6;
+    line-height:0.5;
+}
+
+#dev{
+    padding-top: 5px;
+    line-height: 0;
+}
+
+#dev span{
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 17px;
 }
 
 .footer a{
@@ -462,4 +474,168 @@ color: white;
         font-size:18px;
     }
 
+}
+
+
+/* ================================
+   FILE REQUIREMENTS PAGE
+================================ */
+
+.requirements-page {
+    min-height: 100vh;
+    padding: 80px 20px;
+}
+
+.requirements-container {
+    width: min(900px, 100%);
+    margin: auto;
+}
+
+.requirements-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.requirements-badge {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.requirements-header h1 {
+    font-size: 42px;
+    margin: 0 0 15px;
+}
+
+.requirements-header p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+.requirements-card {
+    padding: 30px;
+    margin-bottom: 22px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(12px);
+}
+
+.requirements-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    opacity: 0.65;
+    margin-bottom: 25px;
+}
+
+.file-limits {
+    display: grid;
+    gap: 12px;
+}
+
+.file-limit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.file-limit div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.file-limit strong {
+    font-size: 16px;
+}
+
+.file-limit span {
+    font-size: 13px;
+    opacity: 0.55;
+}
+
+.file-limit b {
+    font-size: 17px;
+}
+
+.notes-list {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.notes-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+.notes-list li:last-child {
+    margin-bottom: 0;
+}
+
+.supported-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.supported-types span {
+    padding: 9px 15px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 13px;
+}
+
+.requirements-footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.requirements-footer p {
+    opacity: 0.65;
+}
+
+.requirements-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+
+    .requirements-page {
+        padding: 50px 15px;
+    }
+
+    .requirements-header h1 {
+        font-size: 32px;
+    }
+
+    .requirements-card {
+        padding: 22px;
+    }
+
+    .file-limit {
+        padding: 15px;
+    }
 }
