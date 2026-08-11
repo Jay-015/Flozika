@@ -1,4 +1,5 @@
 Flask
 pdf2docx
 Pillow
+pypdf
 gunicorn

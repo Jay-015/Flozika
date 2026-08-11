@@ -68,7 +68,7 @@ fileInput.addEventListener("change", function () {
             break;
 
         case "pdf":
-            maxSize = 25 * 1024 * 1024; // 25 MB
+            maxSize = 10 * 1024 * 1024; // 10 MB
             break;
 
         case "doc":
